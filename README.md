@@ -1,87 +1,118 @@
-# WordPress Migration Runbook
+# Blogger / Blogspot to WordPress Migration Runbook
 
-A practical runbook for moving a WordPress website between hosts, domains, or environments with a clear backup, testing, and rollback process.
+A practical, SEO-conscious runbook for moving a Blogger or Blogspot website to WordPress while protecting content quality, media, URLs, and the visitor experience.
 
 > **Maintainer:** Joynal Abdin · [DevJoynal](https://devjoynal.com)
 
-## Migration principle
+## What Blogger-to-WordPress Migration Involves
 
-A migration is successful when the agreed website, data, URLs, integrations, and visitor journeys work in the new environment—not merely when the files have been copied. Plan the move around the website’s risk, traffic, database activity, email, DNS, and rollback needs.
+A Blogger migration is more than exporting text. A careful transfer includes the WordPress destination, posts, pages, images, embedded media, labels, dates, authors, comments where supported, URL structure, internal links, redirects, search visibility, and post-migration testing.
 
-## Choose the migration type
+The exact result depends on the Blogger template, custom widgets, media sources, comment system, HTML structure, and target WordPress setup. This runbook favors a transparent scope and quality checks over promising a perfect one-click transfer for every site.
 
-| Migration type | Main risk |
+## Pre-Migration Checklist
+
+### 1. Audit the Blogger site
+
+- Record the current custom domain, Blogspot address, HTTPS status, and approximate post/page count.
+- Review the URL pattern, labels, authors, dates, comments, images, videos, downloads, and embedded content.
+- List important landing pages, high-traffic posts, subscription forms, custom widgets, and external integrations.
+- Crawl or export a URL inventory so important pages can be checked after launch.
+
+### 2. Back up the source
+
+- Download the Blogger export XML file from **Settings → Manage blog → Back up content**.
+- Save a copy of important images, downloadable files, theme assets, and any custom HTML.
+- Keep the original Blogger site available until the WordPress version and redirects have been validated.
+- Preserve a dated copy of the URL inventory and migration notes.
+
+### 3. Prepare WordPress
+
+- Set up hosting, HTTPS, the production domain or a protected staging site, and a current WordPress version.
+- Configure permalinks deliberately rather than accepting a structure that conflicts with the old URLs.
+- Create the required users, categories, tags, menus, widgets, and essential pages.
+- Install only the migration, SEO, redirect, caching, and security tools needed for the agreed scope.
+- Confirm a working WordPress backup and a rollback plan before importing content.
+
+## Content Transfer Workflow
+
+### 1. Export and import
+
+1. Export the Blogger XML and keep the original file unchanged.
+2. Import the content into a clean WordPress staging environment using a suitable Blogger importer or an agreed manual process.
+3. Review the import report and compare the expected number of posts, pages, comments, and authors with the result.
+4. Do not publish a bulk import before checking formatting, metadata, and media.
+
+### 2. Normalize content
+
+- Map Blogger **labels** to an intentional WordPress category and tag structure; do not create hundreds of accidental duplicates.
+- Preserve original publication dates and authors where possible, and document any exceptions.
+- Check headings, paragraphs, lists, tables, code, shortcodes, captions, and embedded videos.
+- Remove obsolete Blogger-specific markup only after confirming that the visible content still works.
+- Review internal links for old Blogspot addresses, attachment URLs, and broken anchors.
+
+### 3. Check images and media
+
+- Confirm that featured images and inline images display correctly on the new domain.
+- Check whether images still point to Blogger’s image/CDN host and decide whether they should be downloaded, re-hosted, or intentionally retained.
+- Test image sizes, filenames, alt text, captions, lazy loading, and responsive behavior.
+- Rebuild unsupported widgets, forms, galleries, downloads, and video embeds instead of assuming they will transfer automatically.
+
+## URL Structure and Redirect Planning
+
+- Compare the old Blogger URL pattern with the planned WordPress permalink structure before launch.
+- Build a redirect map for the homepage, posts, pages, label archives, feeds where relevant, and other important indexed URLs.
+- Use permanent redirects only when the destination is a genuine equivalent; avoid sending every old URL to the homepage.
+- Check trailing slashes, date segments, URL encoding, HTTPS, canonical URLs, and host variations.
+- Test redirects from both the old Blogspot address and the old custom domain when applicable.
+- Update internal links, XML sitemaps, canonical tags, Search Console properties, analytics settings, and social profile links after launch.
+
+## Post-Migration Validation Checklist
+
+### Content and design
+
+- [ ] Expected posts and pages are present.
+- [ ] Titles, dates, authors, labels/categories, tags, excerpts, and featured images are correct.
+- [ ] Images, videos, downloads, forms, menus, widgets, comments, and embeds work.
+- [ ] Mobile, tablet, and desktop layouts have been reviewed.
+
+### Technical and SEO checks
+
+- [ ] HTTPS works consistently and mixed-content warnings are resolved.
+- [ ] Important old URLs resolve through the planned redirects.
+- [ ] New URLs return the correct status code and do not create redirect chains.
+- [ ] Canonical URLs, robots rules, XML sitemap, pagination, and noindex settings are intentional.
+- [ ] Internal links, 404 pages, search, feeds, and navigation have been tested.
+- [ ] Search Console, analytics, email, forms, caching, and security monitoring are connected.
+
+### Launch and monitoring
+
+- [ ] A fresh WordPress backup exists immediately before launch.
+- [ ] DNS and domain changes are scheduled with a rollback contact and maintenance plan.
+- [ ] The old Blogger site is kept available while redirects and indexing are monitored.
+- [ ] Crawl errors, traffic, rankings, server logs, and user reports are reviewed after launch.
+- [ ] Any missing media, broken links, formatting issues, or redirect gaps are documented and fixed.
+
+## Common Blogger Migration Issues
+
+| Issue | Practical response |
 | --- | --- |
-| Host-to-host | Configuration, PHP, database, email, and DNS differences |
-| Domain change | Redirects, canonical URLs, search indexing, cookies, and mixed content |
-| Staging-to-production | Incomplete content, environment URLs, credentials, and cache behavior |
-| Subdirectory-to-root | Path changes, links, media URLs, and rewrite rules |
-| Rebuild on new theme | Content mapping, functionality gaps, forms, and design regressions |
+| Images remain on Blogger’s CDN | Audit image URLs, re-host where appropriate, and verify every important image after import. |
+| Custom widgets do not transfer | Recreate forms, navigation, subscription tools, galleries, and scripts with WordPress-compatible alternatives. |
+| Comments are incomplete | Identify the source comment system, confirm what the importer supports, and plan a separate export or replacement when necessary. |
+| Labels create poor taxonomy | Review labels before import and map them to a smaller, useful category/tag structure. |
+| Old URLs return 404 errors | Use a tested redirect map for valuable posts and pages; do not rely on a blanket homepage redirect. |
+| Formatting contains Blogger markup | Clean and review HTML in batches, then manually inspect high-value posts and unusual layouts. |
+| Search visibility changes after launch | Verify canonicals, sitemap, redirects, robots rules, indexing settings, and Search Console coverage. |
 
-## Pre-migration inventory
+## Rollback and Documentation
 
-Record the current domain and protocol, hosting details, WordPress and PHP versions, database size, media library, active theme, plugins, cron jobs, forms, email delivery, payment systems, analytics, search tools, CDN, DNS records, SSL, redirects, robots rules, XML sitemap, and important URLs.
+Keep the Blogger export, WordPress backup, URL map, import notes, redirect rules, known issues, and launch checklist together. If a serious problem appears, restore the agreed backup or return DNS to the previous environment while the issue is investigated. Record what was changed so future maintenance is repeatable.
 
-Create a URL list for the homepage, service pages, articles, products, category pages, media files, feeds, and any page receiving traffic or backlinks. This list becomes the basis for post-migration checks and redirect decisions.
+## Need Blogger-to-WordPress Migration Help?
 
-## Step-by-step runbook
+Need to move a Blogger or Blogspot site to WordPress? Visit [devjoynal.com](https://devjoynal.com) to discuss content transfer, media checks, URL mapping, redirects, SEO-conscious structure, and post-migration support.
 
-### 1. Confirm access and ownership
+You can also follow [DevJoynal on Facebook](https://web.facebook.com/DevJoynal/).
 
-Confirm access to the current host, new host, database, domain registrar, DNS provider, email provider, SSL controls, and relevant third-party services. Use named accounts and secure credential handling. Do not put passwords in migration notes or repository issues.
-
-### 2. Create and verify backups
-
-Back up the database and files separately, including uploads, configuration notes, custom code, and server-level rules where appropriate. Store a copy outside the source account and verify that the backup is readable. For a high-risk move, perform a restoration rehearsal before the live cutover.
-
-### 3. Prepare the destination
-
-Match or improve the required PHP version, database engine, web server behavior, storage, permissions, SSL, email configuration, and caching environment. Keep the destination private or protected while testing. Use a temporary host or local hosts-file mapping when appropriate.
-
-### 4. Copy files and database
-
-Transfer the WordPress files and import the database through a controlled process. Update configuration values for the destination environment. If URLs change, use a safe serialized-data-aware search-and-replace method; do not run a blind text replacement that can corrupt serialized values.
-
-### 5. Test before DNS change
-
-Check the login, homepage, navigation, forms, media, search, comments if used, ecommerce or payment flows, emails, scheduled tasks, redirects, 404 pages, robots rules, sitemap, analytics, SSL, mixed content, mobile layout, and important service pages. Compare key URLs against the inventory.
-
-### 6. Plan the cutover
-
-Lower DNS TTL ahead of a planned move where appropriate, communicate a maintenance window, pause or account for content changes during the final sync, and prepare a named rollback decision. Do not change DNS until the destination has passed the agreed tests.
-
-### 7. Change DNS and monitor
-
-Update the required DNS records, confirm propagation, and monitor the old and new environments. Check logs, forms, email delivery, uptime, redirects, analytics, and search-console signals. Keep the old site available but protected until the migration is confirmed.
-
-## Post-migration checklist
-
-- Important URLs return the intended status and content.
-- HTTPS works consistently without mixed-content warnings.
-- Forms, emails, payments, and external integrations work.
-- Redirects exist for URLs that changed.
-- The XML sitemap and robots directives are intentional.
-- Cache, CDN, image delivery, and scheduled tasks behave correctly.
-- Backups run in the new environment and a restore path is documented.
-- Temporary access and old credentials are removed or rotated.
-- The client receives a short handover note and any known limitations.
-
-## Rollback signals
-
-Consider rollback or a controlled maintenance state when key data is missing, payments or lead forms fail, widespread redirects are wrong, the new environment corrupts content, email is unavailable, or the team cannot restore the website safely. A rollback plan should name the decision-maker and the exact restore steps before the migration begins.
-
-## Need WordPress migration help?
-
-DevJoynal provides practical WordPress migration, backup, troubleshooting, and launch support.
-
-**Explore services:** [devjoynal.com](https://devjoynal.com)
-
-## References
-
-- [WordPress Migration Guide](https://developer.wordpress.org/advanced-administration/upgrade/migrating/)
-- [Google Search Central: Site Moves](https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes)
-- [WordPress Permalinks](https://wordpress.org/documentation/article/settings-permalinks-screen/)
-
-## License
-
-This runbook is for educational and operational planning purposes. A migration should be adapted to the website’s hosting, data, integrations, traffic, and rollback requirements.
+**Move the content carefully. Preserve the URLs. Launch with confidence.**
