@@ -10,6 +10,17 @@ A practical, SEO-conscious runbook for moving a **Blogger or Blogspot website to
 
 > **Migration is more than exporting an XML file.** A successful transfer prepares the destination, maps the content, checks media and formatting, preserves important URLs, validates the new site, and monitors the launch.
 
+## Quick Navigation
+
+Start with the [migration start guide](START_HERE.md), then use the [migration worksheet](WORKSHEET.md) to record source inventory, scope decisions, URL mapping, media checks, validation, and handover notes. Review the [changelog](CHANGELOG.md) for dated improvements and the [contributing guide](CONTRIBUTING.md) before suggesting a documentation change.
+
+| Need | Resource |
+| --- | --- |
+| Start a safe migration plan | [START_HERE.md](START_HERE.md) |
+| Record scope and URL decisions | [WORKSHEET.md](WORKSHEET.md) |
+| Review maintenance history | [CHANGELOG.md](CHANGELOG.md) |
+| Suggest a safe documentation improvement | [CONTRIBUTING.md](CONTRIBUTING.md) |
+
 [Visit DevJoynal](https://devjoynal.com/?utm_source=github&utm_medium=referral&utm_campaign=blogger-wordpress-migration) · [WordPress Malware Removal Checklist](https://github.com/joynalabddin/wordpress-security-checklist) · [Facebook](https://web.facebook.com/Devjoynal/)
 
 ## Special Offer for GitHub Visitors
