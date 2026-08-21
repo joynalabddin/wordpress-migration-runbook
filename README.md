@@ -12,15 +12,17 @@ A practical, SEO-conscious runbook for moving a **Blogger or Blogspot website to
 
 [Visit DevJoynal](https://devjoynal.com/?utm_source=github&utm_medium=referral&utm_campaign=blogger-wordpress-migration) · [WordPress Malware Removal Checklist](https://github.com/joynalabddin/wordpress-security-checklist) · [Facebook](https://web.facebook.com/Devjoynal/)
 
-## 🎁 Special Offer for GitHub Visitors
+## Special Offer for GitHub Visitors
 
 Get **20% off Blogger-to-WordPress migration services** when you mention this repository.
 
-- **Coupon Code:** `GITHUB20`
-- **How to redeem:** Mention the code when contacting [DevJoynal](https://devjoynal.com/?utm_source=github&utm_medium=referral&utm_campaign=blogger-wordpress-migration).
-- **Typical scope:** Blogger XML transfer, images, labels, dates, authors, URL mapping, redirects, SEO checks, and post-launch validation.
+| Offer | Details |
+| --- | --- |
+| Coupon code | `GITHUB20` |
+| Typical scope | Blogger XML transfer, images, labels, dates, authors, URL mapping, redirects, SEO checks, and post-launch validation |
+| Redeem | Mention the code when contacting [DevJoynal](https://devjoynal.com/?utm_source=github&utm_medium=referral&utm_campaign=blogger-wordpress-migration) |
 
-> This offer must be confirmed before work begins. Final scope depends on the source site, content volume, media, widgets, comments, URL patterns, and required manual review.
+> The offer must be confirmed before work begins. Final scope, price, timeline, and required access depend on the source site, content volume, media, widgets, comments, URL patterns, and manual review needs.
 
 ## What This Runbook Covers
 
@@ -115,6 +117,40 @@ Blogger templates, custom widgets, comments, media hosts, URL patterns, and unus
 | Old URLs return 404 errors | Use a tested redirect map; avoid a blanket homepage redirect. |
 | Blogger markup damages formatting | Clean HTML in batches and manually inspect high-value posts. |
 | Search visibility changes | Verify canonicals, sitemap, redirects, robots rules, indexing, and Search Console. |
+
+## Illustrative Migration Case Pattern
+
+The following is a **generic workflow example**, not a claim about a named client or a guaranteed result.
+
+A blogger wants to move an established Blogspot site to WordPress without losing content or important search paths. The audit records the source URL, XML backup, post/page count, labels, authors, dates, image locations, custom widgets, comments, high-value pages, and current URL patterns.
+
+The transfer is tested on staging. Content counts are compared, labels are mapped to a useful taxonomy, images and embedded media are inspected, formatting is cleaned, old URLs are mapped to genuine new destinations, and redirects are tested before launch. Post-launch review covers mobile pages, forms, 404s, Search Console, sitemap, internal links, media, and user reports. Exact work depends on the source site and approved scope.
+
+## Frequently Asked Questions
+
+### Is Blogger XML import enough for a complete migration?
+
+Usually not. XML transfer is a starting point. Images, labels, authors, dates, custom widgets, comments, HTML, internal links, URLs, redirects, SEO settings, and post-launch behavior still need review.
+
+### Will all Blogger images automatically move to WordPress?
+
+Not always. Images may remain on a Blogger CDN, contain unusual URLs, or require manual inspection. Important images should be checked for loading, dimensions, alt text, captions, and ownership.
+
+### Can you preserve old Blogger URLs?
+
+The plan depends on the old URL pattern and the target WordPress permalink structure. A redirect map should send important old URLs to the most relevant new pages without chains or a blanket homepage redirect.
+
+### Will migration guarantee that Google rankings will stay the same?
+
+No. A careful migration can reduce avoidable technical problems, but rankings and search visibility depend on content, redirects, indexing, links, competition, user needs, technical conditions, and time.
+
+### What should I send for an initial scope review?
+
+Send the current Blogger or Blogspot URL, target domain, approximate post/page/media count, preferred launch date, and concerns about images, comments, labels, authors, dates, old URLs, or SEO. Do not send passwords in public messages.
+
+### Do you also help with hacked WordPress sites?
+
+Yes. See the [WordPress Malware Removal Checklist](https://github.com/joynalabddin/wordpress-security-checklist) for safe triage, investigation, cleanup, validation, hardening, and a separate GitHub visitor offer.
 
 ## Need Migration Help?
 
